@@ -1,6 +1,6 @@
 import { couchCluster } from "../../src/services/couchbase/mpg.js";
 
-await couchCluster.query(/*sql*/`CREATE PRIMARY INDEX "idx_mpg_1" ON "mpg"`);
+await couchCluster.query(/*sql*/"CREATE PRIMARY INDEX `idx_mpg_1` ON `mpg`");
 
 await couchCluster.query(/*sql*/`
     INSERT INTO mpg
