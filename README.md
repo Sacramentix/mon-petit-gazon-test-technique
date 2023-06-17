@@ -55,3 +55,5 @@ All commands are run from the root of the project, from a terminal:
 ## What we can improve
 
 - We can add some automated test.
+- We can improve error handling of Couchbase error.
+- We can add custom message on league creation and team update success.
