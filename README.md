@@ -1,6 +1,6 @@
 # Mon petit gazon test technique
 
-This is an express api of Mon petit gazon
+This is an express api of Mon petit gazon.
 
 ## 🚀 Tech stack
 
@@ -17,15 +17,15 @@ This is an express api of Mon petit gazon
 
 - First clone the project on your local computer
 ```
-git clone https://github.com/Sacramentix/...
-cd ...
+git clone https://github.com/Sacramentix/mon-petit-gazon-test-technique
+cd mon-petit-gazon-test-technique
 ```
 
 #### Node js
 
 - Make sure you have node installed. You can install it from the official website [here](https://nodejs.org).
-- Install version 18.11 or above if you want to run `npm run dev`
-- I suggest you install [NVM](https://github.com/nvm-sh/nvm) in order to handle multiple node version
+- Install version 18.11 or above if you want to run `npm run dev`.
+- I suggest you install [NVM](https://github.com/nvm-sh/nvm) in order to handle multiple node version.
 
 #### Docker
 
@@ -45,6 +45,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run couchbase:docker`| Launch Couchbase with Docker                 |
 | `npm run couchbase:init`  | Load sample data into Couchbase              |
 | `npm run dev`             | Start the server and auto-reload on change   |
-| `npm run build`           | Compile the project to js in dist folder     |
+| `npm run build`           | Transpile the project to js in dist folder   |
 | `npm start`               | Start the server                             |
 
