@@ -32,6 +32,10 @@ cd mon-petit-gazon-test-technique
 - We use docker in order to start an Couchbase.
 - Make sure you have Docker installed. You can install it from the official website [here](https://www.docker.com).
 
+#### Env
+
+- Make sure you create .env based on the .env.sample file.
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -48,3 +52,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run build`           | Transpile the project to js in dist folder   |
 | `npm start`               | Start the server                             |
 
+## What we can improve
+
+- We can add some automated test.
