@@ -1,4 +1,4 @@
-import { exec } from "node:child_process";
+import { execSync } from "node:child_process";
 import { env } from "../../src/env/index.js";
 
 // This script need a running Docker Couchbase instance
@@ -11,8 +11,9 @@ const flushBucketCommand =
 
 const dockerExec = `docker exec ${env.DOCKER_COUCHBASE_INSTANCE} bash -c '${flushBucketCommand}'`;
 
-await exec(dockerExec, (e, stdout, stderr) => {
-    process.stdout.write(stdout);
-    process.stderr.write(stderr);
-})
+console.log(`$ ${dockerExec}\n`);
+
+execSync(dockerExec, {stdio: "pipe"});
+
+console.log("Bucket mpg flushed.\n");
 
