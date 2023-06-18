@@ -15,3 +15,5 @@ await couchCluster.query(/*sql*/`
     ('mpg_team_1_1', { 'id': 'mpg_team_1_1', 'type': 'mpg_team', 'name': 'la team de Greg' }),
     ('mpg_team_1_2', { 'id': 'mpg_team_1_2', 'type': 'mpg_team', 'name': 'la team de Theo' })
 `);
+
+console.log("Sample data loaded in Couchbase.\n");
