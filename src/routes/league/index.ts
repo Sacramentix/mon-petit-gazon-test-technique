@@ -10,7 +10,6 @@ export function addLeagueRoutes(app:Express) {
   app.post("/league", json(), createLeagueRoute);
 }
 
-
 /** GET | /league/:league_id/users | getUserOfLeague  **/
 
 const getUserOfLeagueSchema = z.object({
@@ -37,5 +36,6 @@ const createLeagueSchema = z.object({
 
 async function createLeagueRoute(req:Request, res:Response) {
     const { body: league } = zparseWithError(createLeagueSchema, req, res);
-    return res.send(await createLeague(league));
+    const result = await createLeague(league);
+    return res.status(201).send(result);
 }
