@@ -6,6 +6,6 @@ const app = express();
 
 addRoutes(app);
 
-app.listen(env.PORT , () => {
-    console.log(`Listening on port ${env.PORT}...`);
+app.listen(env.EXPRESS_PORT , () => {
+    console.log(`Listening on port ${env.EXPRESS_PORT}...`);
 });

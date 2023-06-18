@@ -3,7 +3,7 @@ import z, { ZodError } from "zod";
 config();
 
 const envSchema = z.object({
-    PORT: z.coerce.number().optional().default(8080),
+    EXPRESS_PORT: z.coerce.number().optional().default(8080),
     COUCHBASE_URL: z.string().startsWith("couchbase://"),
     COUCHBASE_USER: z.string().nonempty(),
     COUCHBASE_PASSWORD: z.string().nonempty(),
