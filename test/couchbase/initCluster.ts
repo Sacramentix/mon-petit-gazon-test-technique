@@ -5,6 +5,7 @@ import { env } from "../../src/env/index.js";
 
 const initClusterCommand = 
 `couchbase-cli cluster-init \
+    --services data,index,query,fts,eventing,analytics,backup \
     --cluster-username ${env.COUCHBASE_USER} \
     --cluster-password ${env.COUCHBASE_PASSWORD} \
     --cluster-name ${env.COUCHBASE_CLUSTER}`
