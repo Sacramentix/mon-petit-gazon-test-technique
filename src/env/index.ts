@@ -7,7 +7,6 @@ const envSchema = z.object({
     COUCHBASE_URL: z.string().startsWith("couchbase://"),
     COUCHBASE_USER: z.string().nonempty(),
     COUCHBASE_PASSWORD: z.string().nonempty(),
-    COUCHBASE_BUCKET: z.string().nonempty(),
 }).catchall(z.string());
 
 
