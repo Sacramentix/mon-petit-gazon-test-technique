@@ -5,8 +5,10 @@ config();
 const envSchema = z.object({
     EXPRESS_PORT: z.coerce.number().optional().default(8080),
     COUCHBASE_URL: z.string().startsWith("couchbase://"),
+    COUCHBASE_CLUSTER: z.string().nonempty(),
     COUCHBASE_USER: z.string().nonempty(),
     COUCHBASE_PASSWORD: z.string().nonempty(),
+    DOCKER_COUCHBASE_INSTANCE: z.string().nonempty().default("couchbase-mpg"),
 }).catchall(z.string());
 
 
