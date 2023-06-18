@@ -4,12 +4,18 @@
   "module": "src/index.ts",
   "type": "module",
   "scripts": {
+    "exec:ts": "node --loader ts-node/esm --experimental-specifier-resolution=node",
+
     "check:type": "tsc --noEmit",
-    "check:env": "node --loader ts-node/esm --experimental-specifier-resolution=node src/env/index.ts",
-    "couchbase:docker": "docker run -d --name db -p 8091-8097:8091-8097 -p 9123:9123 -p 11207:11207 -p 11210:11210 -p 11280:11280 -p 18091-18097:18091-18097 couchbase",
-    "couchbase:init": "node --loader ts-node/esm --experimental-specifier-resolution=node test/couchbase/loadSampleData.ts",
+    "check:env": "npm run exec:ts src/env/index.ts",
+
+    "couchbase:docker": "npm run exec:ts test/couchbase/initDocker.ts",
+    "couchbase:init": "npm run exec:ts test/couchbase/initAll.ts",
+    "couchbase:flush": "npm run exec:ts test/couchbase/flushBucket.ts",
+    "couchbase:load": "npm run exec:ts test/couchbase/loadSampleData.ts",
+
     "dev": "node --watch --loader ts-node/esm --experimental-specifier-resolution=node src/index.ts",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "start": "node dist"
   },
   "devDependencies": {
