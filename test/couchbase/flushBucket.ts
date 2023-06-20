@@ -1,19 +1,14 @@
-import { execSync } from "node:child_process";
-import { env } from "../../src/env/index.js";
+import { couchCluster } from "../../src/services/couchbase/mpg.js";
+import { QueryScanConsistency } from "couchbase";
 
 // This script need a running Docker Couchbase instance
+export async function flush() {
 
-const flushBucketCommand = 
-`couchbase-cli bucket-flush \
-    --username ${env.COUCHBASE_USER} \
-    --password ${env.COUCHBASE_PASSWORD} \
-    --bucket mpg`
+    await couchCluster.query(/*sql*/`
+        DELETE FROM mpg
+        WHERE true
+    `, { scanConsistency: QueryScanConsistency.RequestPlus }).catch(e=>{});
 
-const dockerExec = `docker exec ${env.DOCKER_COUCHBASE_INSTANCE} bash -c '${flushBucketCommand}'`;
+    console.log("Bucket mpg flushed.\n");
 
-console.log(`$ ${dockerExec}\n`);
-
-execSync(dockerExec, {stdio: "pipe"});
-
-console.log("Bucket mpg flushed.\n");
-
+}

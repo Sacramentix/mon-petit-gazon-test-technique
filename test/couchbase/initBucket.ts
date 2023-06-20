@@ -8,6 +8,7 @@ const initBucketCommand =
     --cluster 127.0.0.1:8091 \
     --bucket-type couchbase \
     --bucket-ramsize 200 \
+    --enable-flush 1 \
     --username ${env.COUCHBASE_USER} \
     --password ${env.COUCHBASE_PASSWORD} \
     --bucket mpg`
@@ -16,6 +17,6 @@ const dockerExec = `docker exec ${env.DOCKER_COUCHBASE_INSTANCE} bash -c '${init
 
 console.log(`$ ${dockerExec}\n`);
 
-execSync(dockerExec, {stdio: "pipe"});
+execSync(dockerExec, {stdio: 'inherit'});
 
 console.log("Bucket initiated.\n");

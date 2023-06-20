@@ -10,22 +10,6 @@ const dockerRun = `docker run -d --name ${env.DOCKER_COUCHBASE_INSTANCE} ${portA
 
 console.log(`$ ${dockerRun}\n`);
 
-execSync(dockerRun, {stdio: "pipe"});
-
-// The command never end so we instead await docker to input the instance id
-// await new Promise<void>( (resolve, reject) => {
-//     exec(dockerRun, (e, stdout, stderr) => {
-//         process.stdout.write(stdout);
-//         process.stderr.write(stderr);
-//         if (stderr != "" || e != null) return reject("Error on Docker Couchbase instance creation.");
-//         try {
-//             // Check if the output is the instance id
-//             z.string().length(65).regex(/[0-9A-Fa-f]{64}/).parse(stdout);
-//             resolve();
-//         } catch(e) {
-//             reject("Error on Docker Couchbase instance creation.");
-//         }
-//     });
-// });
+execSync(dockerRun, {stdio: 'inherit'});
 
 console.log("Docker Couchbase instance initiated.\n");

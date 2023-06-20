@@ -47,10 +47,10 @@ All commands are run from the root of the project, from a terminal:
 | `npm run exec:ts`			| Run the ts file in argument				   |
 | `npm run check:type`      | Check for typescript error on the project    |
 | `npm run check:env`       | Check the env config                         |
+| `npm test`       			| Run all test           		               |
 | `npm run couchbase:docker`| Launch Couchbase with Docker                 |
 | `npm run couchbase:init`  | Launch Couchbase with Docker and setup it	   |
-| `npm run couchbase:flush` | Flush Couchbase data						   |
-| `npm run couchbase:init`  | Load sample data into Couchbase              |
+| `npm run couchbase:test`  | Flush & load test data in Couchbase          |
 | `npm run dev`             | Start the server and auto-reload on change   |
 | `npm run build`           | Transpile the project to js in dist folder   |
 | `npm start`               | Start the server                             |

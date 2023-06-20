@@ -14,6 +14,6 @@ const dockerExec = `docker exec ${env.DOCKER_COUCHBASE_INSTANCE} bash -c '${init
 
 console.log(`$ ${dockerExec}\n`);
 
-execSync(dockerExec, {stdio: "pipe"});
+execSync(dockerExec, {stdio: 'inherit'});
 
 console.log("Cluster initiated.\n");
